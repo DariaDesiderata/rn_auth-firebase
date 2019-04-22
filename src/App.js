@@ -26,7 +26,6 @@ class App extends Component {
                 this.setState({ loggedIn: false });
             }
         });
-        console.log('loggedIn', this.state.loggedIn);
     }
 
     handleLogOut() {

@@ -23,6 +23,13 @@ class LoginForm extends Component {
                     .catch(this.onLoginFail.bind(this));
             });
     }
+
+    onLoginFail() {
+        this.setState({
+            error: 'Authentication failed',
+            loading: false
+        });
+    }
     onLoginSuccess() {
         this.setState({
             email: '',
@@ -31,12 +38,7 @@ class LoginForm extends Component {
             loading: false
         });
     }
-    onLoginFail() {
-        this.setState({
-            error: 'Authentication failed',
-            loading: false
-        });
-    }
+
     renderButton() {
         return this.state.loading
             ? <Spinner size="small" />
